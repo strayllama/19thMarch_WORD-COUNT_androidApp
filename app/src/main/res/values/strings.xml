@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">WordCounter</string>
+    <string name="type_here">Type stuff ere...</string>
+    <string name="presss_to_count_words">Press to Count</string>
+    <string name="press_to_count_message">Press Button get the count</string>
 </resources>

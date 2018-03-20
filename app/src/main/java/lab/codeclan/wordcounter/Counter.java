@@ -24,29 +24,29 @@ public class Counter {
             // This replaces all no a-z_A-Z_0-9 with nothing, i.e. removes punctuation.
             words[i] = words[i].replaceAll("[^\\w]", "").toLowerCase();
             if (wordListCounted.containsKey(words[i]) == true ) {
-                int oldcount = wordListCounted.get(words[i]);
-                int newcount = oldcount + 1;
-                wordListCounted.put(words[i], newcount);
+//                int oldcount = wordListCounted.get(words[i]);
+//                int newcount = oldcount + 1;
+//                wordListCounted.put(words[i], newcount);
+                wordListCounted.put(words[i], wordListCounted.get(words[i]) + 1);
             } else {
                 wordListCounted.put(words[i], 1);
             }
         }
 
-        // COPIED AND PASTED FROM https://stackoverflow.com/questions/21054415/how-to-sort-a-hashmap-by-the-integer-value
 //        HashMap<String, Integer> map = wordListCounted;
-//
-//        Object[] a = map.entrySet().toArray();
-//        Arrays.sort(a, new Comparator() {
-//            public int compare(Object o1, Object o2) {
-//                return ((Map.Entry<String, Integer>) o2).getValue()
-//                        .compareTo(((Map.Entry<String, Integer>) o1).getValue());
+// method Comparable would be better.
+        // COPIED AND PASTED FROM https://stackoverflow.com/questions/21054415/how-to-sort-a-hashmap-by-the-integer-value
+//        Object[] array = map.entrySet().toArray();   // makes an array of hash objects with each key-value pair
+//        Arrays.sort(array, new Comparator() {
+//            public int compare(Object ob1, Object ob2) {
+//                return ((Map.Entry<String, Integer>) ob2).getValue()
+//                        .compareTo(((Map.Entry<String, Integer>) ob1).getValue());
 //            }
 //        });
-//        for (Object e : a) {
+//        for (Object e : array) {
 //            System.out.println(((Map.Entry<String, Integer>) e).getKey() + " : "
 //                    + ((Map.Entry<String, Integer>) e).getValue());
 //        }
-
 
 
         return wordListCounted.toString();
